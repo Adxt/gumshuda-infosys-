@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>collect db</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- CSS RELATED TO THIS PAGE  -->
+    <style>
+
+.msec_1 {
+            width: 100%;
+            height: 90vh;
+            background-image: url('/static/img/bg_investigation.PNG');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            opacity: 0.7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .uandv img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50px;
+        }
+
+        .uandv {
+            /* width: 30vh;
+            height: 50vh; */
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 30px;
+        }
+
+        #controls {
+            background-color: white;
+            border: 2px solid black;
+            text-align: center;
+            width: 80%;
+        }
+
+        #controls li input {
+            width: 50%;
+        }
+
+        #verify {
+            display: flex;
+            background-color: rgb(255, 68, 0);
+            color: white;
+        }
+        @media screen and (max-width:450px){
+            .uandv {
+            /* width: 30vh;
+            height: 50vh; */
+            width: 250px;
+            height: 250px; 
+            }
+            .uandv img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50px;
+        }
+
+        }
+        /* prev style page */
+        main{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        table{
+            display: block;
+        }
+        table, th, td {
+            padding: 10px;
+        }
+        label{
+            padding: 5px;
+        }
+        .tcriminal{
+            display: none;
+        }
+        .is-active{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="com_logo">
+                <li class="hl_nav"><a href="#"><img class="logo" src="/static/img/LOGO.PNG" alt="GUMSHUDA"></a></li>
+            </ul>
+
+            <ul class="hu_nav">
+                <li class="hl_nav"><a class="bor" href="/">Home</a></li>
+                <li class="hl_nav"><a class="bor" href="/services">Services</a></li>
+                <li class="hl_nav"><a class="bor" href="/about">About</a></li>
+                <li class="hl_nav"><a class="bor" href="/contact_us">Contact</a></li>
+            </ul>
+            <ul class="hu_nav">
+                <li class="hl_nav"><a href=""><button class="Sign_up">Sign Up</button></li></a>
+                <li class="hl_nav"><a href="/login"><button class="btn">Login</button></li></a>
+            </ul>
+            <button class="hamburger" onclick="show()"><div class="bar"></div></button>
+        </nav>
+        <nav class="menu">
+            <ul class="menuitems">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact_us">contact_us</a></li>
+                <li><a href=""><button class="Sign_up">Sign Up</button></li></a>
+                <li><a href="/login"><button class="btn">Login</button></li></a>
+            </ul>
+        </nav>
+    </header>
+    <!-- <div id="empty"></div> -->
+    <!-- <hr> -->
+    <section class="error">
+        <p>To view this website please use a larger screen size device</p>
+    </section>
+
+    <main>
+        
+       <div class="container" ">
+        <h1 style="text-align: center;">ENTER DATA</h1>
+
+        <form action="/submit_form" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                  <th>Avialable ID</th>
+                  <th><input type="text" id="ID" name="ID" placeholder="Enter ID"></th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <th><input type="text" id="name" name="name" placeholder="Enter name"></th>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <th><input type="number" id="age" name="age" placeholder="Enter age"></th>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <!-- <th><input type="radio" name="gender" id="male" value="male" required ><label for="person">Male</label><br>
+                    <input type="radio" name="gender" id="female" value="female" required ><label for="person">Female</label></th> -->
+                    <th><input type="text" id="gender" name="gender"  placeholder="Enter gender"></th>
+                </tr>
+    
+                <tr>
+                    <th>Contact</th>
+                    <th><input type="text" id="cno" name="cno"  placeholder="Enter contact"></th>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <th><input type="text" id="add" name="add" required  placeholder="Enter location "></th>
+                </tr>
+                
+                <tr>
+                    <th>Upload Image</th>
+                    <!-- <th><input type="text" id="path" name="path" required  placeholder="Enter path "></th> -->
+                    <th><input type="file" name="path" id="path"></th>
+                </tr>
+    
+                <tr>
+                    <th>Type of person</th>
+                    <th><input type="radio" name="person" id="civilian" required ><label for="person">Civilian</label><br>
+                    <input type="radio"  name="person" id="criminal" onclick="showDetails()" required><label for="person">Criminal</label></th>
+                </tr>
+              </table>  
+              <table  class="tcriminal">
+                <tr>
+                    <th>Crime Committed</th>
+                    <th><input type="text" style="visibility:hidden" id="crime" name="crime" placeholder="Crime Committed"></th>
+                </tr>
+              </table>
+              <input class="btn" type="submit" value="Submit">
+        </form>
+       </div>
+          
+    </main>
+
+    <footer>
+        <div id="footer1">
+            <div>
+                <img class="logo" src="/static/img/LOGO.PNG" alt="GUMSHUDA">
+            </div>
+            <br>
+            <div>
+                <p>Copy Right &copy; All Rights Reserved 2022-2025</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/javascript/engine.js"></script>
+    <script>
+    function showDetails(){
+        if (document.getElementById('civilian').checked) {
+            document.getElementById('crime').style.visibility = 'hidden';
+        }
+
+        if (document.getElementById('criminal').checked) {
+            document.getElementById('crime').style.visibility = 'visible';
+        }
+            else{ document.getElementById('crime').style.visibility = 'hidden';
+        }
+        const extra_field=document.getElementsByClassName('tcriminal');
+        console.log(extra_field);
+        extra_field[0].classList.toggle('is-active');
+    }
+    </script>
+</body>
+
+</html>

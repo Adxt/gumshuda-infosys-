@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <title>Document</title>
+    <!-- CSS RELATED TO THIS PAGE  -->
+    <style>
+        .headings {
+            text-align: center;
+            font-size: 4rem;
+            text-decoration: underline;
+            margin: 1rem;
+        }
+
+        .main_heading {
+            font-size: 4rem;
+            margin: 4rem;
+            color: white;
+        }
+
+        /* first part of main division */
+        .msec_1 {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('/static/img/home_backgrd_2.PNG');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+
+        /* second part of main division */
+        .msec_2 {
+            width: 100%;
+            background-color: rgba(203, 201, 201, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* section card image */
+        .scard img {
+            width: 10rem;
+            margin: 2rem;
+        }
+
+        .scard {
+            text-align: center;
+            margin: 1rem 5rem;
+        }
+
+        .msec_2_1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about {
+            width: 80%;
+            margin: 1rem auto;
+            display: flex;
+        }
+
+        .msec_3_1 {
+            font-size: 1rem;
+        }
+
+        #msec_4 {
+            background-color: rgba(203, 201, 201, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tcard {
+            width: 30rem;
+            height: 15rem;
+            background-color: white;
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+            text-align: center;
+            font-weight: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .tcard h3 {
+            font-size: 2rem;
+            margin: 0px 0px 3rem 0px;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width:1370px) {
+            #aboutimg {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width:900px) {
+            .headings {
+                font-size: 3rem;
+            }
+            .main_heading {
+                font-size: 3rem;
+            }
+        }
+
+        @media screen and (max-width:550px) {
+            .msec_1 {
+                height: 50vh;
+            }
+            .main_heading {
+                margin: 10px;
+                font-size: 1.5rem;
+            }
+
+            .tcard{
+                width: 20rem;
+            height: 20rem;
+            }
+
+            .headings {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="com_logo">
+                <li class="hl_nav"><a href="/"><img class="logo" src="{{url_for('static',filename='img/LOGO.PNG') }}" alt="GUMSHUDA"></a></li>
+            </ul>
+
+            <ul class="hu_nav">
+                <li class="hl_nav"><a class="bor" href="/">Home</a></li>
+                <li class="hl_nav"><a class="bor" href="/services">Services</a></li>
+                <li class="hl_nav"><a class="bor" href="/about">About</a></li>
+                <li class="hl_nav"><a class="bor" href="/contact_us">Contact</a></li>
+            </ul>
+            <ul class="hu_nav">
+                <li class="hl_nav"><a href=""><button class="Sign_up">Sign Up</button></li></a>
+                <li class="hl_nav"><a href="/login"><button class="btn">Login</button></li></a>
+            </ul>
+            <button class="hamburger" onclick="show()"><div class="bar"></div></button>
+        </nav>
+        <nav class="menu">
+            <ul class="menuitems">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact_us">contact_us</a></li>
+                <li><a href=""><button class="Sign_up">Sign Up</button></li></a>
+                <li><a href="/login"><button class="btn">Login</button></li></a>
+            </ul>
+        </nav>
+    </header>
+    <div id="empty"></div>
+    <hr>
+    <section class="error">
+        <p>To view this website please use a larger screen size device</p>
+    </section>
+    <main>
+        <section class="msec_1">
+            <p class="main_heading">FIND THE MISSING</p>
+            <a href="/services"><button class="btn">Get Started</button></a>
+        </section>
+        <section class="msec_2">
+            <h2 class="headings">SERVICES</h2>
+            <p style="margin: 10px;font-size: 20px;">Welcome Folks you can now find out your loved ones,who are missing
+            </p>
+            <section class="msec_2_1">
+                <div class="scard">
+                    <div><img src="{{url_for('static',filename='img/ser1.PNG') }}" alt=""></div>
+                    <p>For more explore services tab</p>
+                </div>
+                <div class="scard">
+                    <div><img src="{{url_for('static',filename='img/ser2.PNG') }}" alt=""></div>
+                    <p>Get effective results</p>
+                </div>
+                <div class="scard">
+                    <div><img src="{{url_for('static',filename='img/ser3.PNG') }}" alt=""></div>
+                    <p>24 hour search response</p>
+                </div>
+            </section>
+        </section>
+
+        <section class="about">
+            <section class="msec_3_1">
+                <h2 class="headings">ABOUT US</h2>
+                <p>This website will be used to help people and families to find their loved ones who are missing. The
+                    idea is to match the available images of missing people to the images in database. The image search
+                    will be happen irrespective of the time span that is, user will be able to compare the current
+                    images with the old images or vice versa as available in database. The image search will be powered
+                    by AI to identify the images irrespective of time. </p>
+                <div>
+                    <h3 style="margin: 30px;font-size: 30px;">Utilities</h3>
+                    <ol type="1">
+                        <li style="list-style-position: inside;">To help tracing missing people</li>
+                        <li style="list-style-position: inside;">For security reasons for criminal activities </li>
+                        <li style="list-style-position: inside;">Unidentified bodies etc.</li>
+                    </ol>
+                </div>
+            </section>
+            <section id="aboutimg">
+                <img src="/static/img/About-Us.jpg" alt="About-Us">
+            </section>
+        </section>
+        <section id="msec_4">
+            <h2 class="headings">TESTIMONIALS</h2>
+            <section class="msec_2_1">
+                <div class="tcard">
+                    <h3>Sourabh</h3>
+                    <p>I thank GTM company for provide such a great application for finding missing people.
+                        I was able to find my grand mother after 5 years through this website.
+                    </p>
+                </div>
+                <div class="tcard">
+                    <h3>Sourima</h3>
+                    <p>I am from crime investigation department, I have solved many cases by using this application.
+                        Thank you GTM team and please try to provide more information after matching images</p>
+                </div>
+                <div class="tcard">
+                    <h3>Nikhil</h3>
+                    <p>I am from crime investigation department, I have solved many cases by using this application.
+                        Thank you GTM team and please try to provide more information after matching images</p>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <div id="footer1">
+            <div>
+                <img class="logo" src="/static/img/LOGO.PNG" alt="GUMSHUDA">
+            </div>
+            <br>
+            <div>
+                <p>Copy Right &copy; All Rights Reserved 2022-2025</p>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static',filename='javascript/engine.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Document</title>
+    <style>
+        main {
+            width: 100%;
+            background-image: url('/static/img/back_login.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #sec_login {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #sec_login form {
+            width: 550px;
+            height: 560px;
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 50px;
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #sec_login form input {
+            display: block;
+            position: relative;
+            width: 488px;
+            height: 66px;
+            left: 0px;
+            top: 0px;
+            background: #D9D9D9;
+            border-radius: 100px;
+            margin: 20px;
+
+            text-align: center;
+            font-size: 25px;
+            font-family: emoji;
+        }
+
+        #login {
+            font-size: 50px;
+            margin: 30px 0px;
+
+        }
+
+        .sec1_para {
+            margin: 14px;
+            font-size: 20px;
+        }
+
+        @media screen and (max-width:550px) {
+            #sec_login form {
+                width: 420px;
+                height: 500px;
+            }
+
+            #sec_login form input {
+                width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="com_logo">
+                <li class="hl_nav"><a href="#"><img class="logo" src="/static/img/LOGO.PNG" alt="GUMSHUDA"></a></li>
+            </ul>
+
+            <ul class="hu_nav">
+                <li class="hl_nav"><a class="bor" href="/">Home</a></li>
+                <li class="hl_nav"><a class="bor" href="./services.html">Services</a></li>
+                <li class="hl_nav"><a class="bor" href="./about.html">About</a></li>
+                <li class="hl_nav"><a class="bor" href="./contact_us.html">Contact</a></li>
+            </ul>
+            <ul class="hu_nav">
+                <li class="hl_nav"><a href=""><button class="Sign_up">Sign Up</button></li></a>
+                <li class="hl_nav"><a href="./login.html"><button class="btn">Login</button></li></a>
+            </ul>
+            <button class="hamburger" onclick="show()">
+                <div class="bar"></div>
+            </button>
+        </nav>
+        <nav class="menu">
+            <ul class="menuitems">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact_us.html">contact_us</a></li>
+                <li><a href=""><button class="Sign_up">Sign Up</button></li></a>
+                <li><a href="./login.html"><button class="btn">Login</button></li></a>
+            </ul>
+        </nav>
+    </header>
+    <div id="empty"></div>
+    <hr>
+    <section class="error">
+        <p>To view this website please use a larger screen size device</p>
+    </section>
+    <hr>
+    <main>
+        <section id="sec_login">
+            <form action="#">
+                <p id="login">Login</p>
+                <input type="text" placeholder="Enter your email/phone">
+                <input type="password" placeholder="Enter your email/phone">
+                <button class="btn">Login</button>
+                <p class="sec1_para">Do you have an account ? <a href="./signup.html">Sign Up</a></p>
+                <p class="sec1_para">Forgot password</p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div id="footer1">
+            <div>
+                <img class="logo" src="./img/LOGO.PNG" alt="GUMSHUDA">
+            </div>
+            <br>
+            <div>
+                <p>Copy Right &copy; All Rights Reserved 2022-2025</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./javascript/engine.js"></script>
+</body>
+
+</html>
